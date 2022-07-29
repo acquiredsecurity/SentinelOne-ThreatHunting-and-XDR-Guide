@@ -1,4 +1,4 @@
-Run this Macro in Excel to remove Columns that have no Data in them.
+//Run this Macro in Excel to remove Columns that have no Data in them. Copy and paste the code below into a Macro and execute it.
 
 
 Sub Macro1()

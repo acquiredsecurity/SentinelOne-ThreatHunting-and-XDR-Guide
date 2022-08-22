@@ -9,10 +9,19 @@ Threat Hunting / searching for behaviors in your environment that may be associa
 
 Here are the basic steps I follow when performing hunting with SentinelOne. For this guide I am going to provide a simple example: The execution of powershell where an external DNS request is made. CmdLine Contains Anycase "powershell" AND DnsRequest EXISTS
 
+Tips before we get started:
+
+-- You're a threat hunter and you are looking for the proverbial needle in the haystacks. 
+-- A good hunting query may return +100K's of results and you might be interested in one line out of those hundreds of thousaands of lines. 
+-- Cast a wide net and work backwards, if you knew what you were looking for you could write a query to find it but you don't!
+-- How to get good at this job? Look at a lot of results from your queries. Learn what's normal so you can find what's abnormal.
+      -- Document your results in confluence or a shared resource across your team. 
+      -- Work with team members who might be more experienced and ask questions.
+
 
 1. Hypothesis - Determine which query or sets of queries I would like to run and what my time frame / scope is for performing a hunt.
-Be sure to set your Scope/Time Frame and your max results. I personally like to set my results to max 20K and time frame to 14 days to see what I get when I am running a query for the first time. THis will help determine how you might want to adjust your hunt once you determine how many results are returned. If your query maxes out at 20K you will want to tune it and remove false positives until you get some result less than 20K unless you determine you have 20K malicious results. Kust keep in mind that if you are maxing out at 20K results you aren't getting the full results in your query response and need to tune out false positives or adjust your time frame.
 
+Be sure to set your Scope/Time Frame and your max results. I personally like to set my results to max 20K and time frame to 14 days to see what I get when I am running a query for the first time. This will help determine how one might want to adjust their hunt once it is determined how many results are returned. If the query you run maxes out at 20K you will want to tune it and remove false positives until you get some result less than 20K, unless you determine you have 20K malicious results =(. Just keep in mind that if you are maxing out at 20K results you aren't getting the full picture in your query response (as only the first 20K results are returned) and need to tune out false positives or adjust your time frame. 
 
 
 2. Tune/Review - Work to eliminate false positives from your results. If the query above returned the max of 20K results there will definitely be tuning required.

@@ -16,14 +16,14 @@ The following are steps I take to tune/analyze queries.
                                           
 a. Export results to CSV with all columns
 b. Run a macro in excel to remove all columns that don't contian any data (Included in theis module)
-c. Do simple things like save your CSV as an xlsx, lock the top rows and use the data function to filter. Sort
-colums of importance to group similar things together.
+c. Reformat your date columns, save your CSV as an xlsx, lock the top rows and use the data function to filter. Sort
+colums of importance to group similar things together as needed.
 d. Build a pivot table in excel to analyze my result. (In the example above I am interested in two 
 main data sources. Data that contains comand line information and the DNSRequest information
 e. Use this csv to see how data is stored in SentinelOne. In my experience things change quite 
 frequently so the more you hunt the more you may notice new pieces of info that can help in your hunting.
                                           
- 3. Evaluate results -   If I determine this is a high fidelity search for which my criteria is low false positive rate and useful to be notified on as it may indicate suspicious behavior, I would consider turning this into a STAR rule for automated threat notification.
+3. Evaluate results -   If I determine this is a high fidelity search for which my criteria is low false positive rate and useful to be notified on as it may indicate suspicious behavior, I would consider turning this into a STAR rule for automated threat notification.
                                           
 a. For this search I would look at the command line information and domains from the results and determine 
 if this is expected behavior or if it's potentially malicious. 

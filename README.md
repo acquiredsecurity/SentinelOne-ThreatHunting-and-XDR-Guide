@@ -9,8 +9,11 @@ Threat Hunting / searching for behaviors in your environment that may be associa
 
 Here are the basic steps I follow when performing hunting with SentinelOne. For this guide I am going to provide a simple example: The execution of powershell where an external DNS request is made. CmdLine Contains Anycase "powershell" AND DnsRequest EXISTS
 
+
 1. Hypothesis - Determine which query or sets of queries I would like to run and what my time frame / scope is for performing a hunt.
 Be sure to set your Scope/Time Frame and your max results. I personally like to set my results to max 20K and time frame to 14 days to see what I get when I am running a query for the first time. THis will help determine how you might want to adjust your hunt once you determine how many results are returned. If your query maxes out at 20K you will want to tune it and remove false positives until you get some result less than 20K unless you determine you have 20K malicious results. Kust keep in mind that if you are maxing out at 20K results you aren't getting the full results in your query response and need to tune out false positives or adjust your time frame.
+
+
 
 2. Tune/Review - Work to eliminate false positives from your results. If the query above returned the max of 20K results there will definitely be tuning required.
 
@@ -26,7 +29,9 @@ d. Build a pivot table in excel to analyze my result. (In the example above I am
 
 e. Use this csv to see how data is stored in SentinelOne. In my experience things change quite frequently so the more you hunt the more you may notice new pieces of info that can help in your hunting.
 
-3. Evaluate/Analysis - Analyze the results of your query by enumerating processes, pivoting on suspicious indicators and using external intelligence to review and verify. There may be some overlap between this step and step 2 Tune/Review. 
+
+
+3. Evaluate/Analysis - Analyze the results of your query by enumerating processes/data points, pivoting on suspicious indicators and using external intelligence to review and verify. There may be some overlap between this step and step 2 Tune/Review. 
 
 a. For the example search I would look at the command line information and domains from the results and determine if this is expected behavior or if it's potentially malicious.
 

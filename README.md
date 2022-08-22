@@ -34,9 +34,9 @@ b. Run a macro in excel to remove all columns that don't contain any data (Inclu
 
 c. Reformat your date columns, save your CSV as an xlsx, lock the top rows and use the data function to filter. Sort columns of importance to group similar things together as needed. 
 
-d. Build a pivot table in excel to analyze my result. (In the example above I am interested in two main data sources. Data that contains command line information and the DNSRequest information. If I determine I have 20K dns requests to microsoft.com I may need to adjust my query to something like: CmdLine Contains Anycase "powershell" AND DnsRequest EXISTS and DnsRequest Does Not ContainCIS "microsoft.com" 
+d. Build a pivot table in excel to analyze my result. (In the example above I am interested in two main data sources. Data that contains command line information and the DNSRequest information. If I determine I have 20K dns requests to microsoft.com I may need to adjust my query to something like: CmdLine Contains Anycase "powershell" AND DnsRequest EXISTS and DnsRequest Does Not ContainCIS "microsoft.com") 
 
-e. Use this csv to see how data is stored in SentinelOne. In my experience things change quite frequently so the more you hunt the more you may notice new pieces of info that can help in your hunting.
+e. Use this data export to see how data is stored in SentinelOne. In my experience things change quite frequently unnanounced, so the more you hunt the more you may notice new pieces of info that can help in your hunting.
 
 
 

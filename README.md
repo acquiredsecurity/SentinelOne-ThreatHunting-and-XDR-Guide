@@ -1,13 +1,6 @@
 # SentinelOne-Threat-Hunting-Guide
 Beginners Guide to Hunting for Threats
 
-___________  ___ ___  __________ ___________   _____   ___________   ___ ___   ____ ___  _______   ___________.___  _______     ________ 
-\__    ___/ /   |   \ \______   \\_   _____/  /  _  \  \__    ___/  /   |   \ |    |   \ \      \  \__    ___/|   | \      \   /  _____/ 
-  |    |   /    ~    \ |       _/ |    __)_  /  /_\  \   |    |    /    ~    \|    |   / /   |   \   |    |   |   | /   |   \ /   \  ___ 
-  |    |   \    Y    / |    |   \ |        \/    |    \  |    |    \    Y    /|    |  / /    |    \  |    |   |   |/    |    \\    \_\  \
-  |____|    \___|_  /  |____|_  //_______  /\____|__  /  |____|     \___|_  / |______/  \____|__  /  |____|   |___|\____|__  / \______  /
-                  \/          \/         \/         \/                    \/                    \/                         \/         \/ 
-
 
 Threat Hunting / searching for behaviors in your environment that may be associated with malicious activity is a great way to learn more about your environments or your customers environments, so you can explore and asess what is normal and what is suspicious/malicious. This is a simple guide to show users of the XDR Platform SentinelOne how to learn some basic threat hunting concepts.
 

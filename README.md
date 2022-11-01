@@ -44,12 +44,12 @@ e. Use this data export to see how data is stored in SentinelOne. In my experien
 
 a. For the example search I would look at the command line information and domains from the results and determine if this is expected behavior or if it's potentially malicious.
 
-Command Line - simply evaluating what the source process/script is, where it's executing from and if that's expected behavior might be enough to let me know if I need to escalate and investigate. Using the file fetch capability in SentinelOne to pull back the script or binary and evaluate it further in a malware sandbox or through other static/dynamic analysis techniques.
+Command Line - simply evaluating what the source process/script is, where it's executing from and if that's expected behavior might be enough to let me know if I need to escalate and investigate. Using the file fetch capability in SentinelOne to pull back the script or binary and evaluate it further in a malware sandbox or through other static/dynamic analysis techniques. Maybe just reviewing the command line itself will tell me what's going on what's the command line tell me it's doing?
 
 Domains - Create a pivot table on the domains and eliminate the known good and further analyze the suspicious looking domains with OSINT tools like Virus Total.
 
                                           
-                                          
+   THE END                                       
   
   
  

@@ -9,7 +9,7 @@ Sub Macro1()
     On Error Resume Next
     xEndCol = Cells.Find("*", SearchOrder:=xlByColumns, SearchDirection:=xlPrevious).Column
     If xEndCol = 0 Then
-        MsgBox "There is no data on """ & ActiveSheet.Name & """ .", vbExclamation, "Kutools for Excel"
+        MsgBox "There is no data on """ & ActiveSheet.Name & """ .", vbExclamation, "There is No Data"
         Exit Sub
     End If
     Application.ScreenUpdating = False
@@ -20,9 +20,9 @@ Sub Macro1()
         End If
     Next
     If xDel Then
-        MsgBox "All blank and column(s) with only a header row have now been deleted.", vbInformation, "Kutools for Excel"
+        MsgBox "All blank and column(s) with only a header row have now been deleted.", vbInformation, "All Columns Have Been Deleted"
     Else
-        MsgBox "There are no Columns to delete as each one has more data (rows) than just a header.", vbExclamation, "Kutools for Excel"
+        MsgBox "There are no Columns to delete as each one has more data (rows) than just a header.", vbExclamation, "None to Delete!"
     End If
     Application.ScreenUpdating = True
 End Sub

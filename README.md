@@ -4,8 +4,7 @@ Sections:
 
 I. SentinelOne Threat Hunting Guide
 
-II. Skylight-DeepViz2Skylight
-Dashboards and queries built around the traditional DeepVizibility indicator view with the new Skylight feature in SentinelOne. Provides basic queries and visualizations for the following:
+II. Skylight-DeepViz2Skylight -- Dashboards and queries built around the traditional DeepVizibility indicator view with the new Skylight feature in SentinelOne. Provides basic queries and visualizations for the following:
     a. Processes & Cross Processes
     b. Indicators
     c. Files & Drivers

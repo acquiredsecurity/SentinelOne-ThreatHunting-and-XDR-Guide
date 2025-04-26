@@ -1,1 +1,217 @@
-Testing 123
+
+# SentinelOne Threat Hunting Program: Rotating Shift Team Structure
+
+## Program Overview
+
+This threat hunting program is designed for teams operating in rotating shifts with one senior and one junior analyst at all times. The program leverages the SentinelOne framework to provide a structured approach to proactive threat detection.
+
+## Team Structure & Rotation
+
+### Shift Structure
+- **Continuous Coverage**: 24/7 coverage divided into three 8-hour shifts
+- **Staffing Requirement**: Each shift must have exactly 1 senior and 1 junior analyst
+- **Shift Handover Protocol**: 30-minute overlap between shifts for knowledge transfer
+- **Rotation Schedule**: Weekly rotation to prevent burnout and maintain alertness
+
+### Roles & Responsibilities
+
+#### Senior Analyst
+- Lead hypothesis formation and hunting strategy
+- Review and approve hunting queries before execution
+- Train junior analysts during hunts
+- Make final determination on escalations
+- Document new threat hunting techniques
+- Develop and refine STAR rules for automation
+- Use testing lab to execute malware samples in S1 lab and identify telemetry created
+- Document gaps in detecrions across security stack based on malware behaviors 
+
+
+#### Junior Analyst
+- Execute hunting queries under supervision
+- Perform initial triage of results
+- Document findings in standardized format
+- Assist with tuning of queries to reduce false positives
+- Support evidence collection for investigation
+- Learn and practice query development
+
+## Hunting Methodology
+
+Based on the SentinelOne Threat Hunting Guide, our program follows a structured hunting approach:
+
+### 1. Hypothesis Formation
+- Define specific behavior or threat to hunt for
+- Map popular malware samples to Kill Chain
+- Reference MITRE ATT&CK techniques to document TTP catagories 
+- Document hypothesis clearly before beginning
+- Define success criteria for the hunt
+
+### 2. Query Development
+- Start with base queries from existing library
+- Set appropriate time frame (default: 14 days - 90 days )
+- Set max results (default: 20K)
+- Test and iterate query to reduce false positives
+
+### 3. Hunt Execution
+- Execute queries against defined scope
+- Document initial result count
+- Apply filtering to remove known-good items
+- Export relevant data for deeper analysis or use hunting dashboard and document changes
+
+### 4. Analysis & Evaluation
+- Enumerate processes and data points
+- Pivot on suspicious indicators
+- Use external threat intelligence for context
+- Evaluate command line parameters, process execution paths, network connections
+- Use file fetch capability to retrieve suspicious files for sandbox analysis
+
+### 5. Documentation & Feedback
+- Document all findings, even if negative
+- Update query library with new or improved queries
+- Identify potential automation opportunities
+- Share insights with wider SOC team
+
+## Weekly Hunting Schedule
+
+### Monday-Wednesday
+- Focus on scheduled hunts from the hunting calendar
+- Execute planned hunts based on threat intelligence updates
+- Review results from automated STAR rules
+
+### Thursday
+- Dedicated time for developing new hunting techniques
+- Testing and refining STAR rules
+- Knowledge sharing between senior and junior analysts
+
+### Friday-Sunday
+- Focus on hunting based on emerging threats
+- Reactive hunting based on recent SOC alerts
+- Quick-response hunts for newly published vulnerabilities
+
+## Hunting Categories
+
+Based on the SentinelOne framework capabilities, hunts should cover these key categories:
+
+1. **Process Execution**
+   - Unusual process relationships
+   - Known malicious command lines
+   - Unusual execution paths
+
+2. **Network Connections**
+   - DNS requests from unexpected processes
+   - Unusual destination IP addresses
+   - Beaconing behavior
+
+3. **File Operations**
+   - Suspicious file creations in unusual locations
+   - Executable files with abnormal properties
+   - File operations that bypass normal channels
+
+4. **Registry Changes**
+   - Registry modifications for persistence
+   - Changes to security settings
+   - Run keys and startup modifications
+
+5. **Scheduled Tasks & Services**
+   - Creation of unusual scheduled tasks
+   - Service creation and modification
+   - WMI event subscriptions
+
+6. **PowerShell Usage**
+   - Obfuscated PowerShell commands
+   - PowerShell making network connections
+   - Base64 encoded commands
+
+7. **User Behavior**
+   - Unusual logon patterns
+   - Privilege escalations
+   - Access to sensitive resources
+
+## Hunt Development & Iteration Process
+
+### Creating New Hunts
+1. Start with a clear hypothesis
+2. Develop initial query
+3. Test on limited scope
+4. Tune for false positives
+5. Document expected results
+6. Add to hunting library
+
+### Converting Hunts to Automated Rules
+1. Identify hunts with consistent true positives
+2. Convert to STAR rule format
+3. Test in monitoring mode
+4. Document expected alerts
+5. Move to production
+
+## Training & Development
+
+### Junior Analyst Development Path
+- Shadow senior analysts for first month
+- Complete 5 guided hunts before hunting independently
+- Weekly feedback on query development
+- Monthly knowledge assessment
+
+### Team Knowledge Building
+- Bi-weekly threat intelligence review
+- Monthly hunting workshop
+- Quarterly external training
+- Documentation of lessons learned
+
+## Metrics & Reporting
+
+### Hunt Effectiveness
+- Number of hunts completed
+- True positives discovered
+- False positive rates
+- Time to detection
+- Coverage of MITRE ATT&CK matrix
+
+### Team Performance
+- Query development skill progression
+- Time spent per hunt
+- Number of hunts automated
+- Quality of documentation
+
+## Tools & Resources
+
+### SentinelOne Components
+- Skylight for data visualization
+- Deep Visibility for query execution
+- STAR rules for automation
+- File fetch for malware analysis
+
+### External Resources
+- MITRE ATT&CK framework
+- Threat intelligence feeds
+- Known IOC databases
+- Industry-specific threat reports
+
+## Implementation Timeline
+
+### Week 1-2: Setup
+- Establish shift schedules
+- Define initial hunting hypotheses
+- Create basic query library
+- Set up documentation standards
+
+### Week 3-4: Initial Hunts
+- Begin scheduled hunts
+- Document baseline environment
+- Train team on methodology
+- Refine processes based on feedback
+
+### Month 2: Optimization
+- Develop custom STAR rules
+- Refine hunting categories
+- Establish performance metrics
+- Create long-term hunting calendar
+
+### Month 3+: Maturity
+- Expand hunting categories
+- Develop advanced hunting techniques
+- Begin trend analysis across hunts
+- Measure and improve effectiveness
+
+## Conclusion
+
+This threat hunting program provides a structured approach for rotating teams using the SentinelOne framework. By combining clear roles, methodology, and continuous improvement, the program enables effective threat detection while developing analyst capabilities.
